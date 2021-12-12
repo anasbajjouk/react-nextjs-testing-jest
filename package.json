@@ -7,18 +7,20 @@
     "start": "next start",
     "lint": "next lint --dir src",
     "test": "jest",
+    "test:ci": "jest --coverage --silent --ci",
     "prepare": "husky install",
+    "prettier": "prettier {*,src/*,src/**/*} --write --ignore-unknown",
     "lint-staged": "lint-staged"
   },
   "dependencies": {
-    "@testing-library/dom": "^8.11.1",
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/user-event": "^13.5.0",
     "next": "12.0.7",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@testing-library/dom": "^8.11.1",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/user-event": "^13.5.0",
     "@testing-library/react": "^12.1.2",
     "@types/jest": "^27.0.3",
     "@types/node": "16.11.12",
@@ -38,7 +40,7 @@
     "typescript": "^4.5.2"
   },
   "lint-staged": {
-    "*.(tsx|ts|js)": "eslint --cache --fix",
+    "*.(tsx|ts)": "eslint --cache --fix",
     "*": "prettier --write --ignore-unknown"
   }
 }
